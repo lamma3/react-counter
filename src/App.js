@@ -5,7 +5,9 @@ import CounterGroup from "./components/CounterGroup";
 function App() {
   return (
     <div className="App">
-      <CounterGroup />
+      <header className="App-header">
+        <CounterGroup />
+      </header>
     </div>
   );
 }
