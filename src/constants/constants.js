@@ -1,1 +1,1 @@
-export const COUNTER_GROUP_SIZE = 2;
+export const COUNTER_GROUP_DEFAULT_SIZE = 2;

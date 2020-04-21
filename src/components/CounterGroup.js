@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
-import { COUNTER_GROUP_SIZE } from "../constants/constants";
+import { COUNTER_GROUP_DEFAULT_SIZE } from "../constants/constants";
 
 export class CounterGroup extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export class CounterGroup extends Component {
     this.updateGroupSize = this.updateGroupSize.bind(this);
 
     this.state = {
-      size: COUNTER_GROUP_SIZE,
+      size: COUNTER_GROUP_DEFAULT_SIZE,
     };
   }
 
