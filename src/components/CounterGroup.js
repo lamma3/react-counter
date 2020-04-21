@@ -27,7 +27,8 @@ export class CounterGroup extends Component {
   updateGroupSize(event) {
     let newSize = parseInt(event.target.value);
     this.setState(() => ({
-      size: this.isValidGroupSize(newSize) ? newSize : 0,
+      size: this.isValidGroupSize(newSize) ? newSize : COUNTER_GROUP_DEFAULT_SIZE,
+      sum: COUNTER_GROUP_INIT_SUM,
     }));
   }
 
