@@ -5,6 +5,7 @@ export class Counter extends Component {
     super(props);
 
     this.incrementByOne = this.incrementByOne.bind(this);
+    this.decrementByOne = this.decrementByOne.bind(this);
 
     this.state = {
       number: 0,
@@ -17,12 +18,18 @@ export class Counter extends Component {
     }));
   }
 
+  decrementByOne() {
+    this.setState(state => ({
+      number: state.number - 1,
+    }));
+  }
+
   render() {
     return (
       <div>
         <button onClick={this.incrementByOne}>+</button>
         <span>{this.state.number}</span>
-        <button>-</button>
+        <button onClick={this.decrementByOne}>-</button>
       </div>
     );
   }
