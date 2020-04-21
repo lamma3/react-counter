@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
-import { COUNTER_GROUP_DEFAULT_SIZE } from "../constants/constants";
+import { COUNTER_GROUP_DEFAULT_SIZE, COUNTER_GROUP_INIT_SUM } from "../constants/constants";
 
 export class CounterGroup extends Component {
   constructor(props) {
@@ -10,8 +10,11 @@ export class CounterGroup extends Component {
 
     this.state = {
       size: COUNTER_GROUP_DEFAULT_SIZE,
+      sum: COUNTER_GROUP_INIT_SUM,
     };
   }
+
+
 
   updateGroupSize(event) {
     let newSize = parseInt(event.target.value);

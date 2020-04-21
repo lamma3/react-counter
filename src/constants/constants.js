@@ -1,1 +1,2 @@
 export const COUNTER_GROUP_DEFAULT_SIZE = 2;
+export const COUNTER_GROUP_INIT_SUM = 0;
