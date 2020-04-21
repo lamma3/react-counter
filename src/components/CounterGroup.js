@@ -14,7 +14,7 @@ export class CounterGroup extends Component {
 
   updateGroupSize(event) {
     let newSize = parseInt(event.target.value);
-    this.setState((state) => ({
+    this.setState(() => ({
       size: isNaN(newSize) ? 0 : newSize,
     }));
   }
