@@ -13,13 +13,13 @@ export class Counter extends Component {
   }
 
   incrementByOne() {
-    this.setState(state => ({
+    this.setState((state) => ({
       number: state.number + 1,
     }));
   }
 
   decrementByOne() {
-    this.setState(state => ({
+    this.setState((state) => ({
       number: state.number - 1,
     }));
   }
