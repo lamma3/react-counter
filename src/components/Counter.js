@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { COUNTER_INIT_COUNT } from "../constants/constants";
 
 export class Counter extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export class Counter extends Component {
     this.decrementByOne = this.decrementByOne.bind(this);
 
     this.state = {
-      count: 0,
+      count: COUNTER_INIT_COUNT,
     };
   }
 
