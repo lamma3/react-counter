@@ -8,19 +8,30 @@ export class Counter extends Component {
     this.decrementByOne = this.decrementByOne.bind(this);
 
     this.state = {
-      number: 0,
+      count: 0,
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.count !== prevState.count) {
+      this.processCountChange(this.state.count, prevState.count);
+    }
+  }
+
+  processCountChange(newCount, prevCount) {
+    let valueChange = newCount - prevCount;
+    this.props.onCountChange(valueChange);
   }
 
   incrementByOne() {
     this.setState((state) => ({
-      number: state.number + 1,
+      count: state.count + 1,
     }));
   }
 
   decrementByOne() {
     this.setState((state) => ({
-      number: state.number - 1,
+      count: state.count - 1,
     }));
   }
 
@@ -28,7 +39,7 @@ export class Counter extends Component {
     return (
       <div>
         <button onClick={this.incrementByOne}>+</button>
-        <span>{this.state.number}</span>
+        <span>{this.state.count}</span>
         <button onClick={this.decrementByOne}>-</button>
       </div>
     );

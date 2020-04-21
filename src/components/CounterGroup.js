@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
-import { COUNTER_GROUP_DEFAULT_SIZE, COUNTER_GROUP_INIT_SUM } from "../constants/constants";
+import {
+  COUNTER_GROUP_DEFAULT_SIZE,
+  COUNTER_GROUP_INIT_SUM,
+} from "../constants/constants";
 
 export class CounterGroup extends Component {
   constructor(props) {
@@ -15,9 +18,9 @@ export class CounterGroup extends Component {
     };
   }
 
-  updateSum(change) {
+  updateSum(valueChange) {
     this.setState((state) => ({
-      sum: state.sum + change,
+      sum: state.sum + valueChange,
     }));
   }
 
@@ -43,8 +46,10 @@ export class CounterGroup extends Component {
           ></input>
         </form>
 
+        <h3>Sum: {this.state.sum}</h3>
+
         {Array.from(Array(this.state.size).keys()).map((value) => (
-          <Counter key={value} />
+          <Counter key={value} onCountChange={this.updateSum} />
         ))}
       </div>
     );
