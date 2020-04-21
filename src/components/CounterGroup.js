@@ -7,6 +7,7 @@ export class CounterGroup extends Component {
     super(props);
 
     this.updateGroupSize = this.updateGroupSize.bind(this);
+    this.updateSum = this.updateSum.bind(this);
 
     this.state = {
       size: COUNTER_GROUP_DEFAULT_SIZE,
@@ -14,7 +15,11 @@ export class CounterGroup extends Component {
     };
   }
 
-
+  updateSum(change) {
+    this.setState((state) => ({
+      sum: state.sum + change,
+    }));
+  }
 
   updateGroupSize(event) {
     let newSize = parseInt(event.target.value);
